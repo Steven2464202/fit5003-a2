@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% set session_user = True %}
+{% block body %}
+<h1>Search users</h1>
+<form method="GET" action="/search">
+  <p><input name="q" value="{{ q }}" placeholder="username"> <button type="submit">Search</button></p>
+</form>
+
+<p>Results for: {{ q | safe }}</p>
+<ul>
+  {% for r in rows %}
+    <li>{{ r["username"] }} ({{ r["email"] }})</li>
+  {% endfor %}
+</ul>
+{% endblock %}

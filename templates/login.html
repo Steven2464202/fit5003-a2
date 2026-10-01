@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+<h1>DevBank — Log in</h1>
+{% if error %}<p class="err">{{ error }}</p>{% endif %}
+<form method="POST" action="/login">
+  <p><input name="username" placeholder="username"></p>
+  <p><input name="password" type="password" placeholder="password"></p>
+  <p><button type="submit">Log in</button></p>
+</form>
+{% endblock %}
